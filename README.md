@@ -23,6 +23,17 @@ Tested with:
 # Usage
 
 ```bash
+% cat <<EOF>> ~/.ssh/config
+
+# Vagrant private network ip
+Host 192.168.33.*
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  LogLevel FATAL
+  User vagrant
+  IdentityFile ~/.vagrant.d/insecure_private_key
+EOF
+
 % git clone git@github.com:kwhrtsk/knife_zero_example.git
 % cd knife_zero_example
 % direnv allow
