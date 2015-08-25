@@ -3,8 +3,8 @@ knife-zero example with Vagrant
 
 # Demo
 
-* Up two VMs in private_network
-* Run build-essential cookbook to these VMs with knife-zero.
+* Create two VMs with private_network configuration.
+* Apply build-essential cookbook to these VMs with knife-zero.
 
 # Requirements
 
