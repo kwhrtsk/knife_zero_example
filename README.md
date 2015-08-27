@@ -15,7 +15,7 @@ Tested with:
 * VirtualBox 5.0.0
 * ruby 2.2.3
 * chef 12.4.1
-* knife-zero 1.7.1
+* knife-zero 1.8.0
 * berkshelf 3.3.0
 * direnv 2.6.0
 * CentOS 7.1(VM on VirtualBox)
@@ -42,11 +42,9 @@ EOF
 % ./bin/berks vendor cookbooks
 % ./bin/knife zero bootstrap $VAGRANT_HOST001
 % ./bin/knife zero bootstrap $VAGRANT_HOST002
-% ./bin/knife exec -E "search(:node, 'hostname:host001'){|n| n.normal['chef_ip'] = ENV['VAGRANT_HOST001']; n.save}"
-% ./bin/knife exec -E "search(:node, 'hostname:host002'){|n| n.normal['chef_ip'] = ENV['VAGRANT_HOST002']; n.save}"
 % ./bin/knife node run_list set host001.example build-essential
 % ./bin/knife node run_list set host002.example build-essential
-% ./bin/knife zero converge 'name:*.example' -a chef_ip
+% ./bin/knife zero converge 'name:*.example' -a knife_zero.host
 ```
 
 # More info
