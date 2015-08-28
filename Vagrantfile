@@ -1,5 +1,5 @@
 Vagrant.configure(2) do |config|
-  config.vm.box = "chef/centos-7.1"
+  config.vm.box = "bento/centos-7.1"
 
   config.vm.define :host001 do |host|
     host.vm.hostname = "host001.example"
